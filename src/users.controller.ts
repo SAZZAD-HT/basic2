@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get,Post } from '@nestjs/common';
 
 @Controller('/users')
  export class usersController{
@@ -6,6 +6,11 @@ import { Controller, Get } from '@nestjs/common';
     @Get("name")
     getUsers(){
         return {'SAZZAD': 'Hossain'};
+    }
+    @Post("addname")
+    postUsers(){
+        
+
     }
 
 }
