@@ -25,10 +25,21 @@ let user =[];
 
     @Get("/getname/:name")
     getname(@Param('name') name: string){
-        
+        const user1 = user.find((user)=>user.name === name);
+        if (user1) {
+            var obj = {
+               
+                age: user1.age,
+                email: user1.email,
+                password: user1.password
+            };
+            console.log(obj)
 
-        return user.find((user)=>user.name === name);
 
-    }
+          return obj;
+        } else {
+          return "User not found";
+
+    }}
 
 }
